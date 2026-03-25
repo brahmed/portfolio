@@ -161,11 +161,15 @@ class _ErrorState extends StatelessWidget {
                   ),
             ),
             const SizedBox(height: 16),
-            TextButton(
-              onPressed: onRetry,
-              child: Text(
-                retryLabel,
-                style: const TextStyle(color: AppColors.accent),
+            Semantics(
+              label: retryLabel,
+              button: true,
+              child: TextButton(
+                onPressed: onRetry,
+                child: Text(
+                  retryLabel,
+                  style: const TextStyle(color: AppColors.accent),
+                ),
               ),
             ),
           ],

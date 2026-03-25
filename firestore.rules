@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /projects/{slug} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /messages/{msgId} {
+      allow read:   if false;
+      allow create: if request.resource.data.keys().hasAll(['name','email','message','locale','created_at'])
+                    && request.resource.data.name    is string && request.resource.data.name.size()    <= 100
+                    && request.resource.data.email   is string && request.resource.data.email.size()   <= 200
+                    && request.resource.data.message is string && request.resource.data.message.size() <= 2000
+                    && request.resource.data.locale  in ['en','fr','ar'];
+      allow update: if false;
+      allow delete: if false;
+    }
+
+  }
+}
