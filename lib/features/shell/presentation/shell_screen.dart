@@ -6,6 +6,8 @@ import '../../about/presentation/about_section.dart';
 import '../../experience/presentation/experience_section.dart';
 import '../../hero/presentation/hero_section.dart';
 import '../../projects/presentation/projects_section.dart';
+import '../../contact/presentation/contact_section.dart';
+import '../../skills/presentation/skills_section.dart';
 import 'nav_bar.dart';
 import 'section_keys.dart';
 
@@ -87,18 +89,12 @@ class _ShellScreenState extends State<ShellScreen> {
               const SliverToBoxAdapter(child: InkBrushDivider()),
               SliverToBoxAdapter(
                 key: _sectionKeys.skills,
-                child: const _PlaceholderSection(
-                  label: 'Skills',
-                  height: 400,
-                ),
+                child: const SkillsSection(),
               ),
               const SliverToBoxAdapter(child: InkBrushDivider()),
               SliverToBoxAdapter(
                 key: _sectionKeys.contact,
-                child: const _PlaceholderSection(
-                  label: 'Contact',
-                  height: 400,
-                ),
+                child: const ContactSection(),
               ),
             ],
           ),
@@ -118,29 +114,3 @@ class _ShellScreenState extends State<ShellScreen> {
   }
 }
 
-class _PlaceholderSection extends StatelessWidget {
-  const _PlaceholderSection({
-    required this.label,
-    required this.height,
-  });
-
-  final String label;
-  final double height;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      alignment: Alignment.center,
-      child: Text(
-        label,
-        style: Theme.of(context).textTheme.displayMedium?.copyWith(
-              color: Theme.of(context)
-                  .colorScheme
-                  .onSurface
-                  .withAlpha(30),
-            ),
-      ),
-    );
-  }
-}

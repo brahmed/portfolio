@@ -6,6 +6,8 @@ import 'core/localization/locale_controller.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/theme_controller.dart';
+import 'features/contact/data/contact_repository.dart';
+import 'features/contact/presentation/contact_view_model.dart';
 import 'features/projects/data/project_repository.dart';
 import 'features/projects/presentation/projects_view_model.dart';
 
@@ -30,6 +32,11 @@ class App extends StatelessWidget {
         ChangeNotifierProvider<ProjectsViewModel>(
           create: (_) => ProjectsViewModel(
             repository: ProjectRepository(),
+          ),
+        ),
+        ChangeNotifierProvider<ContactViewModel>(
+          create: (_) => ContactViewModel(
+            repository: ContactRepository(),
           ),
         ),
       ],
