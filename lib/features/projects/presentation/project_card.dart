@@ -236,27 +236,32 @@ class _StoreLinkButtonState extends State<_StoreLinkButton> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => _hovered = true),
-      onExit: (_) => setState(() => _hovered = false),
-      child: GestureDetector(
-        onTap: widget.onTap,
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 160),
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
-          decoration: BoxDecoration(
-            color: _hovered ? AppColors.accent : Colors.transparent,
-            border: Border.all(color: AppColors.accent, width: 1),
-            borderRadius: BorderRadius.circular(3),
-          ),
-          child: Text(
-            widget.label,
-            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: _hovered ? Colors.white : AppColors.accent,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 0.8,
-                ),
+    return Semantics(
+      label: widget.label,
+      button: true,
+      link: true,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) => setState(() => _hovered = true),
+        onExit: (_) => setState(() => _hovered = false),
+        child: GestureDetector(
+          onTap: widget.onTap,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 160),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+            decoration: BoxDecoration(
+              color: _hovered ? AppColors.accent : Colors.transparent,
+              border: Border.all(color: AppColors.accent, width: 1),
+              borderRadius: BorderRadius.circular(3),
+            ),
+            child: Text(
+              widget.label,
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                    color: _hovered ? Colors.white : AppColors.accent,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 0.8,
+                  ),
+            ),
           ),
         ),
       ),

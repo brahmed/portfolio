@@ -205,32 +205,37 @@ class _LinkChipState extends State<_LinkChip> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => _hovered = true),
-      onExit: (_) => setState(() => _hovered = false),
-      child: GestureDetector(
-        onTap: () => widget.onLaunch(widget.url),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 180),
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: _hovered
-                  ? AppColors.accent
-                  : AppColors.accent.withAlpha(100),
-              width: 1,
+    return Semantics(
+      label: widget.label,
+      button: true,
+      link: true,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) => setState(() => _hovered = true),
+        onExit: (_) => setState(() => _hovered = false),
+        child: GestureDetector(
+          onTap: () => widget.onLaunch(widget.url),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 180),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: _hovered
+                    ? AppColors.accent
+                    : AppColors.accent.withAlpha(100),
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(4),
+              color: _hovered ? AppColors.accent.withAlpha(20) : Colors.transparent,
             ),
-            borderRadius: BorderRadius.circular(4),
-            color: _hovered ? AppColors.accent.withAlpha(20) : Colors.transparent,
-          ),
-          child: Text(
-            widget.label,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.accent,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 0.8,
-                ),
+            child: Text(
+              widget.label,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: AppColors.accent,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 0.8,
+                  ),
+            ),
           ),
         ),
       ),

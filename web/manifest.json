@@ -1,11 +1,11 @@
 {
-    "name": "portfolio",
-    "short_name": "portfolio",
+    "name": "Amine Brahmi — Flutter Developer",
+    "short_name": "Amine Brahmi",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "Mohamed Amine Brahmi — Flutter Developer Portfolio",
+    "background_color": "#F5F0E8",
+    "theme_color": "#C0392B",
+    "description": "Senior Flutter Developer portfolio — mobile apps for insurance, healthcare, fintech, and travel.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

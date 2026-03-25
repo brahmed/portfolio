@@ -267,56 +267,61 @@ class _SubmitButtonState extends State<_SubmitButton> {
         isSending ? widget.l10n.contactSending : widget.l10n.contactSendButton;
     final locale = Localizations.localeOf(context).languageCode;
 
-    return MouseRegion(
-      onEnter: (_) => setState(() => _hovered = true),
-      onExit: (_) => setState(() => _hovered = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        decoration: BoxDecoration(
-          color: isSending
-              ? AppColors.accent.withAlpha(120)
-              : _hovered
-                  ? AppColors.accent
-                  : Colors.transparent,
-          border: Border.all(
+    return Semantics(
+      label: isSending ? widget.l10n.contactSending : widget.l10n.contactSendButton,
+      button: true,
+      enabled: !isSending,
+      child: MouseRegion(
+        onEnter: (_) => setState(() => _hovered = true),
+        onExit: (_) => setState(() => _hovered = false),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          decoration: BoxDecoration(
             color: isSending
                 ? AppColors.accent.withAlpha(120)
-                : AppColors.accent,
-            width: 1.5,
-          ),
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: TextButton(
-          onPressed:
-              isSending ? null : () => widget.vm.submit(locale),
-          style: TextButton.styleFrom(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 32,
-              vertical: 16,
+                : _hovered
+                    ? AppColors.accent
+                    : Colors.transparent,
+            border: Border.all(
+              color: isSending
+                  ? AppColors.accent.withAlpha(120)
+                  : AppColors.accent,
+              width: 1.5,
             ),
-            foregroundColor:
-                _hovered || isSending ? Colors.white : AppColors.accent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4),
-            ),
+            borderRadius: BorderRadius.circular(4),
           ),
-          child: isSending
-              ? const SizedBox(
-                  width: 18,
-                  height: 18,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 1.5,
-                    color: Colors.white,
+          child: TextButton(
+            onPressed:
+                isSending ? null : () => widget.vm.submit(locale),
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 32,
+                vertical: 16,
+              ),
+              foregroundColor:
+                  _hovered || isSending ? Colors.white : AppColors.accent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4),
+              ),
+            ),
+            child: isSending
+                ? const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 1.5,
+                      color: Colors.white,
+                    ),
+                  )
+                : Text(
+                    label,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1.2,
+                          color: _hovered ? Colors.white : AppColors.accent,
+                        ),
                   ),
-                )
-              : Text(
-                  label,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1.2,
-                        color: _hovered ? Colors.white : AppColors.accent,
-                      ),
-                ),
+          ),
         ),
       ),
     );

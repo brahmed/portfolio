@@ -23,36 +23,40 @@ class _HeroCtaButtonState extends State<HeroCtaButton> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => _hovered = true),
-      onExit: (_) => setState(() => _hovered = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        decoration: BoxDecoration(
-          color: _hovered ? AppColors.accent : Colors.transparent,
-          border: Border.all(color: AppColors.accent, width: 1.5),
-          borderRadius: BorderRadius.circular(4),
-        ),
-        child: TextButton(
-          onPressed: widget.onPressed,
-          style: TextButton.styleFrom(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 32,
-              vertical: 18,
-            ),
-            foregroundColor:
-                _hovered ? Colors.white : AppColors.accent,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4),
-            ),
+    return Semantics(
+      label: widget.label,
+      button: true,
+      child: MouseRegion(
+        onEnter: (_) => setState(() => _hovered = true),
+        onExit: (_) => setState(() => _hovered = false),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          decoration: BoxDecoration(
+            color: _hovered ? AppColors.accent : Colors.transparent,
+            border: Border.all(color: AppColors.accent, width: 1.5),
+            borderRadius: BorderRadius.circular(4),
           ),
-          child: Text(
-            widget.label,
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 1.2,
-                  color: _hovered ? Colors.white : AppColors.accent,
-                ),
+          child: TextButton(
+            onPressed: widget.onPressed,
+            style: TextButton.styleFrom(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 32,
+                vertical: 18,
+              ),
+              foregroundColor:
+                  _hovered ? Colors.white : AppColors.accent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4),
+              ),
+            ),
+            child: Text(
+              widget.label,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 1.2,
+                    color: _hovered ? Colors.white : AppColors.accent,
+                  ),
+            ),
           ),
         ),
       ),

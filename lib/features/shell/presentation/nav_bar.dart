@@ -127,6 +127,7 @@ class _MobileNav extends StatelessWidget {
           const LocaleThemeControls(),
           IconButton(
             icon: const Icon(Icons.menu),
+            tooltip: 'Open navigation menu',
             onPressed: () => _openDrawer(context),
           ),
         ],
@@ -207,15 +208,19 @@ class _NavLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Text(
-        'AMB.',
-        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: AppColors.accent,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1,
-            ),
+    return Semantics(
+      label: 'Amine Brahmi — back to top',
+      button: true,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Text(
+          'AMB.',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: AppColors.accent,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1,
+              ),
+        ),
       ),
     );
   }
@@ -239,31 +244,35 @@ class _NavLinkState extends State<_NavLink> {
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
-      child: GestureDetector(
-        onTap: widget.onTap,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            spacing: 3,
-            children: [
-              Text(
-                widget.label,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: 0.5,
-                    ),
-              ),
-              AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                height: 1.5,
-                width: _hovered ? 24 : 0,
-                decoration: BoxDecoration(
-                  color: AppColors.accent,
-                  borderRadius: BorderRadius.circular(1),
+      child: Semantics(
+        label: widget.label,
+        button: true,
+        child: GestureDetector(
+          onTap: widget.onTap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 3,
+              children: [
+                Text(
+                  widget.label,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 0.5,
+                      ),
                 ),
-              ),
-            ],
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  height: 1.5,
+                  width: _hovered ? 24 : 0,
+                  decoration: BoxDecoration(
+                    color: AppColors.accent,
+                    borderRadius: BorderRadius.circular(1),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

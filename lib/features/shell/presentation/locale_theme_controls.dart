@@ -38,22 +38,26 @@ class _LanguageButton extends StatelessWidget {
             locale.languageCode;
     final color = Theme.of(context).colorScheme.onSurface;
 
-    return TextButton(
-      onPressed: () =>
-          context.read<LocaleController>().setLocale(locale),
-      style: TextButton.styleFrom(
-        minimumSize: const Size(36, 36),
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-        foregroundColor: isActive
-            ? Theme.of(context).colorScheme.primary
-            : color.withAlpha(153),
-        textStyle: Theme.of(context).textTheme.labelSmall?.copyWith(
-              fontWeight:
-                  isActive ? FontWeight.w600 : FontWeight.w400,
-              letterSpacing: 1.1,
-            ),
+    return Semantics(
+      label: 'Switch language to $label',
+      button: true,
+      child: TextButton(
+        onPressed: () =>
+            context.read<LocaleController>().setLocale(locale),
+        style: TextButton.styleFrom(
+          minimumSize: const Size(36, 36),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          foregroundColor: isActive
+              ? Theme.of(context).colorScheme.primary
+              : color.withAlpha(153),
+          textStyle: Theme.of(context).textTheme.labelSmall?.copyWith(
+                fontWeight:
+                    isActive ? FontWeight.w600 : FontWeight.w400,
+                letterSpacing: 1.1,
+              ),
+        ),
+        child: Text(label),
       ),
-      child: Text(label),
     );
   }
 }
