@@ -21,7 +21,7 @@ class ProjectModel {
     required this.categoryFr,
     required this.categoryAr,
     required this.techTags,
-    required this.imageUrl,
+    required this.imageUrls,
     required this.sortOrder,
     required this.isVisible,
     this.playStoreUrl,
@@ -54,8 +54,8 @@ class ProjectModel {
   @JsonKey(name: 'tech_tags')
   final List<String> techTags;
 
-  @JsonKey(name: 'image_url')
-  final String imageUrl;
+  @JsonKey(name: 'image_urls')
+  final List<String> imageUrls;
 
   @JsonKey(name: 'sort_order')
   final int sortOrder;

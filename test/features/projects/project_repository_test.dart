@@ -29,7 +29,7 @@ ProjectModel _makeProject({
       categoryFr: 'Mobile',
       categoryAr: 'موبايل',
       techTags: const ['Flutter', 'Dart'],
-      imageUrl: 'https://example.com/image.png',
+      imageUrls: const ['https://example.com/image1.png', 'https://example.com/image2.png'],
       sortOrder: sortOrder,
       isVisible: isVisible,
       playStoreUrl: 'https://play.google.com/store/apps/details?id=test',
