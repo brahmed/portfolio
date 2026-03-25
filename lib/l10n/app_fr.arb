@@ -1,0 +1,67 @@
+{
+  "@@locale": "fr",
+
+  "navHome": "Accueil",
+  "navAbout": "À propos",
+  "navExperience": "Expérience",
+  "navProjects": "Projets",
+  "navSkills": "Compétences",
+  "navContact": "Contact",
+
+  "heroTitle": "Développeur Flutter Senior",
+  "heroSubtitle": "Conception d'expériences mobiles et web belles et performantes",
+  "heroCta": "Voir les projets",
+
+  "aboutTitle": "À propos de moi",
+  "aboutBody": "Ingénieur logiciel mobile avec 4 ans d'expérience dans la conception et la livraison d'applications de haute qualité. Expert en Flutter et Dart, je vise à créer des produits innovants qui améliorent l'expérience utilisateur.",
+  "aboutLinkedIn": "LinkedIn",
+  "aboutGitHub": "GitHub",
+  "aboutEmail": "Email",
+
+  "experienceTitle": "Expérience",
+  "exp1Role": "Ingénieur Logiciel Mobile",
+  "exp1Company": "Value Digital Services",
+  "exp1Period": "Septembre 2022 – Présent",
+  "exp1Description": "Direction d'une équipe de développeurs Flutter pour concevoir et livrer des applications mobiles de haute qualité. Application d'une architecture propre et de pipelines CI/CD. Mentorat des développeurs juniors.",
+  "exp2Role": "Ingénieur Logiciel Mobile",
+  "exp2Company": "Teamwill Group",
+  "exp2Period": "Janvier 2022 – Août 2022",
+  "exp2Description": "Intégration d'un SDK d'authentification biométrique dans une application Flutter via des canaux de méthodes Kotlin. Développement de fonctionnalités pour une application de simulation de crédit.",
+  "exp3Role": "Développeur Flutter (Stage)",
+  "exp3Company": "Munic Car Data",
+  "exp3Period": "Juin 2020 – Décembre 2020",
+  "exp3Description": "Développement de fonctionnalités pour une application de télématique mobile. Création de packages Flutter formant un SDK générique avec documentation.",
+
+  "projectsTitle": "Projets",
+  "projectsEmpty": "Aucun projet disponible.",
+  "projectsError": "Échec du chargement des projets.",
+  "projectsRetry": "Réessayer",
+  "projectPlayStore": "Play Store",
+  "projectAppStore": "App Store",
+
+  "skillsTitle": "Compétences",
+  "skillsGroupFlutter": "Flutter & Dart",
+  "skillsGroupFirebase": "Firebase",
+  "skillsGroupArchitecture": "Architecture",
+  "skillsGroupTools": "Outils & CI/CD",
+  "skillsGroupLanguages": "Langues",
+
+  "contactTitle": "Me contacter",
+  "contactSubtitle": "Vous avez un projet ou souhaitez collaborer ? Envoyez-moi un message.",
+  "contactNameLabel": "Nom",
+  "contactEmailLabel": "Email",
+  "contactMessageLabel": "Message",
+  "contactSendButton": "Envoyer",
+  "contactSending": "Envoi en cours...",
+  "contactSuccess": "Message envoyé avec succès !",
+  "contactError": "Une erreur s'est produite. Veuillez réessayer.",
+  "contactNameRequired": "Le nom est requis",
+  "contactEmailInvalid": "Entrez une adresse email valide",
+  "contactMessageRequired": "Le message est requis",
+  "contactMessageTooLong": "Le message doit contenir 2000 caractères ou moins",
+
+  "themeToggleLight": "Mode clair",
+  "themeToggleDark": "Mode sombre",
+
+  "footerRights": "Tous droits réservés"
+}

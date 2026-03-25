@@ -1,0 +1,67 @@
+{
+  "@@locale": "en",
+
+  "navHome": "Home",
+  "navAbout": "About",
+  "navExperience": "Experience",
+  "navProjects": "Projects",
+  "navSkills": "Skills",
+  "navContact": "Contact",
+
+  "heroTitle": "Senior Flutter Developer",
+  "heroSubtitle": "Crafting beautiful, performant mobile & web experiences",
+  "heroCta": "View Projects",
+
+  "aboutTitle": "About Me",
+  "aboutBody": "Mobile Software Engineer with 4 years of experience designing and delivering high-quality applications. Skilled in Flutter and Dart, I aim to build innovative products that enhance user experiences and drive project success.",
+  "aboutLinkedIn": "LinkedIn",
+  "aboutGitHub": "GitHub",
+  "aboutEmail": "Email",
+
+  "experienceTitle": "Experience",
+  "exp1Role": "Mobile Software Engineer",
+  "exp1Company": "Value Digital Services",
+  "exp1Period": "September 2022 – Present",
+  "exp1Description": "Leading a team of Flutter developers to design, build, and deliver high-quality mobile applications. Applied clean architecture and CI/CD pipelines. Mentored junior developers and conducted code reviews.",
+  "exp2Role": "Mobile Software Engineer",
+  "exp2Company": "Teamwill Group",
+  "exp2Period": "January 2022 – August 2022",
+  "exp2Description": "Integrated biometric authentication SDK into a Flutter app using Kotlin method channels. Developed features for a Flutter mobile and web application enabling credit simulations.",
+  "exp3Role": "Flutter Developer Intern",
+  "exp3Company": "Munic Car Data",
+  "exp3Period": "June 2020 – December 2020",
+  "exp3Description": "Developed features for a Telematics Mobile App. Built Flutter packages forming a generic SDK with documentation for Telematics app development.",
+
+  "projectsTitle": "Projects",
+  "projectsEmpty": "No projects available.",
+  "projectsError": "Failed to load projects.",
+  "projectsRetry": "Retry",
+  "projectPlayStore": "Play Store",
+  "projectAppStore": "App Store",
+
+  "skillsTitle": "Skills",
+  "skillsGroupFlutter": "Flutter & Dart",
+  "skillsGroupFirebase": "Firebase",
+  "skillsGroupArchitecture": "Architecture",
+  "skillsGroupTools": "Tools & CI/CD",
+  "skillsGroupLanguages": "Languages",
+
+  "contactTitle": "Get In Touch",
+  "contactSubtitle": "Have a project in mind or want to collaborate? Send me a message.",
+  "contactNameLabel": "Name",
+  "contactEmailLabel": "Email",
+  "contactMessageLabel": "Message",
+  "contactSendButton": "Send Message",
+  "contactSending": "Sending...",
+  "contactSuccess": "Message sent successfully!",
+  "contactError": "Something went wrong. Please try again.",
+  "contactNameRequired": "Name is required",
+  "contactEmailInvalid": "Enter a valid email address",
+  "contactMessageRequired": "Message is required",
+  "contactMessageTooLong": "Message must be 2000 characters or fewer",
+
+  "themeToggleLight": "Light mode",
+  "themeToggleDark": "Dark mode",
+
+  "footerRights": "All rights reserved"
+}
