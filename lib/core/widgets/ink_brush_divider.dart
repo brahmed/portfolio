@@ -14,14 +14,17 @@ class InkBrushDivider extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: SvgPicture.asset(
-        'assets/svg/brush_stroke_divider.svg',
-        colorFilter: ColorFilter.mode(
-          color.withAlpha(90),
-          BlendMode.srcIn,
-        ),
+      child: SizedBox(
+        height: 20,
         width: double.infinity,
-        fit: BoxFit.fitWidth,
+        child: SvgPicture.asset(
+          'assets/svg/brush_stroke_divider.svg',
+          colorFilter: ColorFilter.mode(
+            color.withAlpha(90),
+            BlendMode.srcIn,
+          ),
+          fit: BoxFit.fitWidth,
+        ),
       ),
     );
   }
