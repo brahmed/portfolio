@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/widgets/ink_brush_divider.dart';
 import '../../../core/widgets/scroll_progress_indicator.dart';
+import '../../about/presentation/about_section.dart';
+import '../../experience/presentation/experience_section.dart';
+import '../../hero/presentation/hero_section.dart';
+import '../../projects/presentation/projects_section.dart';
 import 'nav_bar.dart';
 import 'section_keys.dart';
 
@@ -21,14 +26,23 @@ class _ShellScreenState extends State<ShellScreen> {
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController()
-      ..addListener(_onScroll);
+    _scrollController = ScrollController()..addListener(_onScroll);
   }
 
   void _onScroll() {
     final max = _scrollController.position.maxScrollExtent;
     if (max <= 0) return;
     _scrollProgress.value = _scrollController.offset / max;
+  }
+
+  void _scrollTo(GlobalKey key) {
+    final context = key.currentContext;
+    if (context == null) return;
+    Scrollable.ensureVisible(
+      context,
+      duration: const Duration(milliseconds: 600),
+      curve: Curves.easeInOutCubic,
+    );
   }
 
   @override
@@ -49,35 +63,28 @@ class _ShellScreenState extends State<ShellScreen> {
             controller: _scrollController,
             slivers: [
               NavBar(sectionKeys: _sectionKeys),
-              // Sections wired in subsequent phases
               SliverToBoxAdapter(
                 key: _sectionKeys.hero,
-                child: const _PlaceholderSection(
-                  label: 'Hero',
-                  height: 600,
+                child: HeroSection(
+                  onCtaPressed: () => _scrollTo(_sectionKeys.projects),
                 ),
               ),
+              const SliverToBoxAdapter(child: InkBrushDivider()),
               SliverToBoxAdapter(
                 key: _sectionKeys.about,
-                child: const _PlaceholderSection(
-                  label: 'About',
-                  height: 400,
-                ),
+                child: const AboutSection(),
               ),
+              const SliverToBoxAdapter(child: InkBrushDivider()),
               SliverToBoxAdapter(
                 key: _sectionKeys.experience,
-                child: const _PlaceholderSection(
-                  label: 'Experience',
-                  height: 500,
-                ),
+                child: const ExperienceSection(),
               ),
+              const SliverToBoxAdapter(child: InkBrushDivider()),
               SliverToBoxAdapter(
                 key: _sectionKeys.projects,
-                child: const _PlaceholderSection(
-                  label: 'Projects',
-                  height: 600,
-                ),
+                child: const ProjectsSection(),
               ),
+              const SliverToBoxAdapter(child: InkBrushDivider()),
               SliverToBoxAdapter(
                 key: _sectionKeys.skills,
                 child: const _PlaceholderSection(
@@ -85,6 +92,7 @@ class _ShellScreenState extends State<ShellScreen> {
                   height: 400,
                 ),
               ),
+              const SliverToBoxAdapter(child: InkBrushDivider()),
               SliverToBoxAdapter(
                 key: _sectionKeys.contact,
                 child: const _PlaceholderSection(
@@ -94,7 +102,6 @@ class _ShellScreenState extends State<ShellScreen> {
               ),
             ],
           ),
-          // Ink scroll progress bar pinned at top
           Positioned(
             top: 0,
             left: 0,

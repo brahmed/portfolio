@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../constants/app_colors.dart';
+
 /// Builds the Cairo-based text theme.
 /// Cairo covers both Latin and Arabic scripts — no font switching needed.
 /// Dramatic weight contrast: w300 body, w800 display.
 TextTheme buildCairoTextTheme(Brightness brightness) {
   final color = brightness == Brightness.light
-      ? const Color(0xFF1A1714)
-      : const Color(0xFFEDE8E0);
+      ? AppColors.lightText
+      : AppColors.darkText;
 
   return TextTheme(
     displayLarge: GoogleFonts.cairo(

@@ -6,6 +6,8 @@ import 'core/localization/locale_controller.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/theme_controller.dart';
+import 'features/projects/data/project_repository.dart';
+import 'features/projects/presentation/projects_view_model.dart';
 
 /// Root application widget.
 ///
@@ -24,6 +26,11 @@ class App extends StatelessWidget {
         ),
         ChangeNotifierProvider<LocaleController>(
           create: (_) => LocaleController(),
+        ),
+        ChangeNotifierProvider<ProjectsViewModel>(
+          create: (_) => ProjectsViewModel(
+            repository: ProjectRepository(),
+          ),
         ),
       ],
       child: Consumer2<ThemeController, LocaleController>(
