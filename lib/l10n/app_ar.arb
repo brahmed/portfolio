@@ -38,6 +38,7 @@
   "projectsRetry": "إعادة المحاولة",
   "projectPlayStore": "متجر Play",
   "projectAppStore": "متجر App",
+  "projectScreenshots": "لقطات الشاشة",
 
   "skillsTitle": "المهارات",
   "skillsGroupFlutter": "Flutter وDart",
