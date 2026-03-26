@@ -21,6 +21,9 @@ migrate_working_dir/
 # VS Code — exclude for public repo
 .vscode/
 
+# Dart DevTools local settings
+devtools_options.yaml
+
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
@@ -45,6 +48,7 @@ app.*.map.json
 
 # Firebase — never commit real credentials
 lib/core/firebase/firebase_options.dart
+scripts/run_local.sh
 .env
 *.env
 .firebaserc.local

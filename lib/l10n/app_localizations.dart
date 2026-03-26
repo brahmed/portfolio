@@ -298,6 +298,12 @@ abstract class AppLocalizations {
   /// **'App Store'**
   String get projectAppStore;
 
+  /// No description provided for @projectScreenshots.
+  ///
+  /// In en, this message translates to:
+  /// **'Screenshots'**
+  String get projectScreenshots;
+
   /// No description provided for @skillsTitle.
   ///
   /// In en, this message translates to:

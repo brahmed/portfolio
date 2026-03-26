@@ -112,6 +112,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get projectAppStore => 'متجر App';
 
   @override
+  String get projectScreenshots => 'لقطات الشاشة';
+
+  @override
   String get skillsTitle => 'المهارات';
 
   @override

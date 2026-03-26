@@ -38,6 +38,7 @@
   "projectsRetry": "Réessayer",
   "projectPlayStore": "Play Store",
   "projectAppStore": "App Store",
+  "projectScreenshots": "Captures d'écran",
 
   "skillsTitle": "Compétences",
   "skillsGroupFlutter": "Flutter & Dart",

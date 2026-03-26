@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/constants/app_colors.dart';
@@ -6,6 +7,7 @@ import '../../../core/widgets/animated_fade_slide.dart';
 import '../../../l10n/app_localizations.dart';
 import '../data/project_model.dart';
 import 'project_card_corner_painter.dart';
+import 'project_screenshots_dialog.dart';
 
 /// Animated project card with hover lift, ink corner accent, and store links.
 class ProjectCard extends StatefulWidget {
@@ -195,36 +197,132 @@ class _StoreLinks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final links = <Widget>[];
+    final storeLinks = <Widget>[];
 
     if (project.playStoreUrl != null) {
-      links.add(
+      storeLinks.add(
         _StoreLinkButton(
           label: l10n.projectPlayStore,
+          icon: FontAwesomeIcons.googlePlay,
           onTap: () => onLaunch(project.playStoreUrl!),
         ),
       );
     }
 
     if (project.appStoreUrl != null) {
-      links.add(
+      storeLinks.add(
         _StoreLinkButton(
           label: l10n.projectAppStore,
+          icon: FontAwesomeIcons.appStore,
           onTap: () => onLaunch(project.appStoreUrl!),
         ),
       );
     }
 
-    if (links.isEmpty) return const SizedBox.shrink();
+    final hasScreenshots = project.imageUrls.isNotEmpty;
+    final hasStoreLinks = storeLinks.isNotEmpty;
 
-    return Wrap(spacing: 12, runSpacing: 8, children: links);
+    if (!hasScreenshots && !hasStoreLinks) return const SizedBox.shrink();
+
+    final locale = Localizations.localeOf(context).languageCode;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 8,
+      children: [
+        if (hasScreenshots)
+          _ScreenshotsButton(
+            label: l10n.projectScreenshots,
+            onTap: () => showDialog<void>(
+              context: context,
+              builder: (_) => ProjectScreenshotsDialog(
+                title: project.localizedTitle(locale),
+                imageUrls: project.imageUrls,
+              ),
+            ),
+          ),
+        if (hasStoreLinks)
+          Wrap(spacing: 12, runSpacing: 8, children: storeLinks),
+      ],
+    );
+  }
+}
+
+/// Distinct ghost button with an image icon for the screenshots action.
+class _ScreenshotsButton extends StatefulWidget {
+  const _ScreenshotsButton({required this.label, required this.onTap});
+
+  final String label;
+  final VoidCallback onTap;
+
+  @override
+  State<_ScreenshotsButton> createState() => _ScreenshotsButtonState();
+}
+
+class _ScreenshotsButtonState extends State<_ScreenshotsButton> {
+  bool _hovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      label: widget.label,
+      button: true,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) => setState(() => _hovered = true),
+        onExit: (_) => setState(() => _hovered = false),
+        child: GestureDetector(
+          onTap: widget.onTap,
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 160),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+            decoration: BoxDecoration(
+              color: _hovered
+                  ? AppColors.accent.withAlpha(15)
+                  : Colors.transparent,
+              border: Border.all(
+                color: _hovered
+                    ? AppColors.accent
+                    : AppColors.accent.withAlpha(80),
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(3),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 6,
+              children: [
+                const Icon(
+                  Icons.photo_library_outlined,
+                  size: 14,
+                  color: AppColors.accent,
+                ),
+                Text(
+                  widget.label,
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                        color: AppColors.accent,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 0.8,
+                      ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class _StoreLinkButton extends StatefulWidget {
-  const _StoreLinkButton({required this.label, required this.onTap});
+  const _StoreLinkButton({
+    required this.label,
+    required this.icon,
+    required this.onTap,
+  });
 
   final String label;
+  final IconData icon;
   final VoidCallback onTap;
 
   @override
@@ -254,13 +352,24 @@ class _StoreLinkButtonState extends State<_StoreLinkButton> {
               border: Border.all(color: AppColors.accent, width: 1),
               borderRadius: BorderRadius.circular(3),
             ),
-            child: Text(
-              widget.label,
-              style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    color: _hovered ? Colors.white : AppColors.accent,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: 0.8,
-                  ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 6,
+              children: [
+                FaIcon(
+                  widget.icon,
+                  size: 12,
+                  color: _hovered ? Colors.white : AppColors.accent,
+                ),
+                Text(
+                  widget.label,
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                        color: _hovered ? Colors.white : AppColors.accent,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 0.8,
+                      ),
+                ),
+              ],
             ),
           ),
         ),

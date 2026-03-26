@@ -113,6 +113,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get projectAppStore => 'App Store';
 
   @override
+  String get projectScreenshots => 'Captures d\'écran';
+
+  @override
   String get skillsTitle => 'Compétences';
 
   @override

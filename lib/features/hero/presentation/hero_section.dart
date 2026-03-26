@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
+import '../../../core/constants/app_colors.dart';
 import '../../../core/utils/responsive_breakpoints.dart';
 import '../../../core/widgets/ink_brush_divider.dart';
 import '../../../l10n/app_localizations.dart';
@@ -108,7 +109,7 @@ class _DesktopLayout extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        Expanded(
+        const Expanded(
           flex: 4,
           child: _HeroDecoration(),
         ),
@@ -134,8 +135,15 @@ class _MobileLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 48,
+      spacing: 40,
       children: [
+        const Center(
+          child: SizedBox(
+            width: 160,
+            height: 160,
+            child: _HeroDecoration(maxSize: 160),
+          ),
+        ),
         _HeroContent(
           l10n: l10n,
           strokeProgress: strokeProgress,
@@ -250,20 +258,49 @@ class _AnimatedName extends StatelessWidget {
   }
 }
 
-/// Decorative right-side element — large faint initial as ink wash.
+/// Avatar image with an ink-style accent border.
+/// Always renders as a perfect circle — size is capped at [maxSize].
 class _HeroDecoration extends StatelessWidget {
+  const _HeroDecoration({this.maxSize = 220});
+
+  final double maxSize;
+
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
-      child: Text(
-        'ب',
-        style: TextStyle(
-          fontSize: 280,
-          fontWeight: FontWeight.w800,
-          color: Theme.of(context).colorScheme.onSurface.withAlpha(8),
-          height: 1,
-        ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final size = constraints.maxWidth.isFinite
+              ? constraints.maxWidth.clamp(0.0, maxSize)
+              : maxSize;
+          return SizedBox(
+            width: size,
+            height: size,
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: AppColors.accent,
+                  width: 2.5,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.accent.withAlpha(40),
+                    blurRadius: 32,
+                    offset: const Offset(0, 8),
+                  ),
+                ],
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/images/avatar.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
