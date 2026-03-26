@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../core/widgets/ink_brush_divider.dart';
 import '../../../core/widgets/scroll_progress_indicator.dart';
 import '../../about/presentation/about_section.dart';
-import '../../experience/presentation/experience_section.dart';
 import '../../hero/presentation/hero_section.dart';
 import '../../projects/presentation/projects_section.dart';
 import '../../contact/presentation/contact_section.dart';
@@ -75,11 +74,6 @@ class _ShellScreenState extends State<ShellScreen> {
               SliverToBoxAdapter(
                 key: _sectionKeys.about,
                 child: const AboutSection(),
-              ),
-              const SliverToBoxAdapter(child: InkBrushDivider()),
-              SliverToBoxAdapter(
-                key: _sectionKeys.experience,
-                child: const ExperienceSection(),
               ),
               const SliverToBoxAdapter(child: InkBrushDivider()),
               SliverToBoxAdapter(
