@@ -322,7 +322,7 @@ class _StoreLinkButton extends StatefulWidget {
   });
 
   final String label;
-  final IconData icon;
+  final FaIconData icon;
   final VoidCallback onTap;
 
   @override
