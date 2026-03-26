@@ -112,12 +112,6 @@ abstract class AppLocalizations {
   /// **'About'**
   String get navAbout;
 
-  /// No description provided for @navExperience.
-  ///
-  /// In en, this message translates to:
-  /// **'Experience'**
-  String get navExperience;
-
   /// No description provided for @navProjects.
   ///
   /// In en, this message translates to:
@@ -184,84 +178,6 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get aboutEmail;
 
-  /// No description provided for @experienceTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Experience'**
-  String get experienceTitle;
-
-  /// No description provided for @exp1Role.
-  ///
-  /// In en, this message translates to:
-  /// **'Mobile Software Engineer'**
-  String get exp1Role;
-
-  /// No description provided for @exp1Company.
-  ///
-  /// In en, this message translates to:
-  /// **'Value Digital Services'**
-  String get exp1Company;
-
-  /// No description provided for @exp1Period.
-  ///
-  /// In en, this message translates to:
-  /// **'September 2022 – Present'**
-  String get exp1Period;
-
-  /// No description provided for @exp1Description.
-  ///
-  /// In en, this message translates to:
-  /// **'Leading a team of Flutter developers to design, build, and deliver high-quality mobile applications. Applied clean architecture and CI/CD pipelines. Mentored junior developers and conducted code reviews.'**
-  String get exp1Description;
-
-  /// No description provided for @exp2Role.
-  ///
-  /// In en, this message translates to:
-  /// **'Mobile Software Engineer'**
-  String get exp2Role;
-
-  /// No description provided for @exp2Company.
-  ///
-  /// In en, this message translates to:
-  /// **'Teamwill Group'**
-  String get exp2Company;
-
-  /// No description provided for @exp2Period.
-  ///
-  /// In en, this message translates to:
-  /// **'January 2022 – August 2022'**
-  String get exp2Period;
-
-  /// No description provided for @exp2Description.
-  ///
-  /// In en, this message translates to:
-  /// **'Integrated biometric authentication SDK into a Flutter app using Kotlin method channels. Developed features for a Flutter mobile and web application enabling credit simulations.'**
-  String get exp2Description;
-
-  /// No description provided for @exp3Role.
-  ///
-  /// In en, this message translates to:
-  /// **'Flutter Developer Intern'**
-  String get exp3Role;
-
-  /// No description provided for @exp3Company.
-  ///
-  /// In en, this message translates to:
-  /// **'Munic Car Data'**
-  String get exp3Company;
-
-  /// No description provided for @exp3Period.
-  ///
-  /// In en, this message translates to:
-  /// **'June 2020 – December 2020'**
-  String get exp3Period;
-
-  /// No description provided for @exp3Description.
-  ///
-  /// In en, this message translates to:
-  /// **'Developed features for a Telematics Mobile App. Built Flutter packages forming a generic SDK with documentation for Telematics app development.'**
-  String get exp3Description;
-
   /// No description provided for @projectsTitle.
   ///
   /// In en, this message translates to:
@@ -313,31 +229,31 @@ abstract class AppLocalizations {
   /// No description provided for @skillsGroupFlutter.
   ///
   /// In en, this message translates to:
-  /// **'Flutter & Dart'**
+  /// **'Frameworks & Technologies'**
   String get skillsGroupFlutter;
 
   /// No description provided for @skillsGroupFirebase.
   ///
   /// In en, this message translates to:
-  /// **'Firebase'**
+  /// **'Tools & Platforms'**
   String get skillsGroupFirebase;
 
   /// No description provided for @skillsGroupArchitecture.
   ///
   /// In en, this message translates to:
-  /// **'Architecture'**
+  /// **'Methodologies'**
   String get skillsGroupArchitecture;
 
   /// No description provided for @skillsGroupTools.
   ///
   /// In en, this message translates to:
-  /// **'Tools & CI/CD'**
+  /// **'CI/CD'**
   String get skillsGroupTools;
 
   /// No description provided for @skillsGroupLanguages.
   ///
   /// In en, this message translates to:
-  /// **'Languages'**
+  /// **'Programming Languages'**
   String get skillsGroupLanguages;
 
   /// No description provided for @contactTitle.

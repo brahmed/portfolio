@@ -15,9 +15,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get navAbout => 'À propos';
 
   @override
-  String get navExperience => 'Expérience';
-
-  @override
   String get navProjects => 'Projets';
 
   @override
@@ -53,48 +50,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aboutEmail => 'Email';
 
   @override
-  String get experienceTitle => 'Expérience';
-
-  @override
-  String get exp1Role => 'Ingénieur Logiciel Mobile';
-
-  @override
-  String get exp1Company => 'Value Digital Services';
-
-  @override
-  String get exp1Period => 'Septembre 2022 – Présent';
-
-  @override
-  String get exp1Description =>
-      'Direction d\'une équipe de développeurs Flutter pour concevoir et livrer des applications mobiles de haute qualité. Application d\'une architecture propre et de pipelines CI/CD. Mentorat des développeurs juniors.';
-
-  @override
-  String get exp2Role => 'Ingénieur Logiciel Mobile';
-
-  @override
-  String get exp2Company => 'Teamwill Group';
-
-  @override
-  String get exp2Period => 'Janvier 2022 – Août 2022';
-
-  @override
-  String get exp2Description =>
-      'Intégration d\'un SDK d\'authentification biométrique dans une application Flutter via des canaux de méthodes Kotlin. Développement de fonctionnalités pour une application de simulation de crédit.';
-
-  @override
-  String get exp3Role => 'Développeur Flutter (Stage)';
-
-  @override
-  String get exp3Company => 'Munic Car Data';
-
-  @override
-  String get exp3Period => 'Juin 2020 – Décembre 2020';
-
-  @override
-  String get exp3Description =>
-      'Développement de fonctionnalités pour une application de télématique mobile. Création de packages Flutter formant un SDK générique avec documentation.';
-
-  @override
   String get projectsTitle => 'Projets';
 
   @override
@@ -119,19 +74,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get skillsTitle => 'Compétences';
 
   @override
-  String get skillsGroupFlutter => 'Flutter & Dart';
+  String get skillsGroupFlutter => 'Frameworks & Technologies';
 
   @override
-  String get skillsGroupFirebase => 'Firebase';
+  String get skillsGroupFirebase => 'Outils & Plateformes';
 
   @override
-  String get skillsGroupArchitecture => 'Architecture';
+  String get skillsGroupArchitecture => 'Méthodologies';
 
   @override
-  String get skillsGroupTools => 'Outils & CI/CD';
+  String get skillsGroupTools => 'CI/CD';
 
   @override
-  String get skillsGroupLanguages => 'Langues';
+  String get skillsGroupLanguages => 'Langages de Programmation';
 
   @override
   String get contactTitle => 'Me contacter';

@@ -10,52 +10,31 @@ class SkillGroup {
 /// All skill groups — hardcoded from resume.
 const skillGroups = [
   SkillGroup(
+    titleKey: 'skillsGroupLanguages',
+    skills: ['Dart', 'Swift', 'Java', 'Kotlin'],
+  ),
+  SkillGroup(
     titleKey: 'skillsGroupFlutter',
-    skills: [
-      'Flutter',
-      'Dart',
-      'Flutter Web',
-      'Custom Painter',
-      'Animations',
-      'Provider',
-      'BLoC',
-      'Riverpod',
-    ],
+    skills: ['Flutter', 'Android', 'iOS'],
   ),
   SkillGroup(
     titleKey: 'skillsGroupFirebase',
     skills: [
-      'Firestore',
-      'Firebase Auth',
-      'Firebase Hosting',
-      'Firebase Storage',
-      'Cloud Functions',
+      'Firebase',
+      'Figma',
+      'Git',
+      'Bitbucket',
+      'GitLab',
+      'Jira',
+      'Confluence',
     ],
   ),
   SkillGroup(
     titleKey: 'skillsGroupArchitecture',
-    skills: [
-      'Clean Architecture',
-      'MVVM',
-      'Repository Pattern',
-      'Domain-Driven Design',
-      'REST APIs',
-      'Method Channels',
-    ],
+    skills: ['Agile', 'Scrum', 'Kanban'],
   ),
   SkillGroup(
     titleKey: 'skillsGroupTools',
-    skills: [
-      'Git',
-      'GitHub Actions',
-      'Fastlane',
-      'Codemagic',
-      'Jira',
-      'Figma',
-    ],
-  ),
-  SkillGroup(
-    titleKey: 'skillsGroupLanguages',
-    skills: ['Arabic', 'French', 'English'],
+    skills: ['Jenkins', 'Fastlane', 'Firebase App Distribution'],
   ),
 ];

@@ -84,10 +84,6 @@ class _DesktopNav extends StatelessWidget {
             onTap: () => onScrollTo(sectionKeys.about),
           ),
           _NavLink(
-            label: l10n.navExperience,
-            onTap: () => onScrollTo(sectionKeys.experience),
-          ),
-          _NavLink(
             label: l10n.navProjects,
             onTap: () => onScrollTo(sectionKeys.projects),
           ),
@@ -177,10 +173,6 @@ class _MobileDrawer extends StatelessWidget {
             _DrawerLink(
               label: l10n.navAbout,
               onTap: () => onScrollTo(sectionKeys.about),
-            ),
-            _DrawerLink(
-              label: l10n.navExperience,
-              onTap: () => onScrollTo(sectionKeys.experience),
             ),
             _DrawerLink(
               label: l10n.navProjects,

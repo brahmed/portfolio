@@ -15,9 +15,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navAbout => 'About';
 
   @override
-  String get navExperience => 'Experience';
-
-  @override
   String get navProjects => 'Projects';
 
   @override
@@ -53,48 +50,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutEmail => 'Email';
 
   @override
-  String get experienceTitle => 'Experience';
-
-  @override
-  String get exp1Role => 'Mobile Software Engineer';
-
-  @override
-  String get exp1Company => 'Value Digital Services';
-
-  @override
-  String get exp1Period => 'September 2022 – Present';
-
-  @override
-  String get exp1Description =>
-      'Leading a team of Flutter developers to design, build, and deliver high-quality mobile applications. Applied clean architecture and CI/CD pipelines. Mentored junior developers and conducted code reviews.';
-
-  @override
-  String get exp2Role => 'Mobile Software Engineer';
-
-  @override
-  String get exp2Company => 'Teamwill Group';
-
-  @override
-  String get exp2Period => 'January 2022 – August 2022';
-
-  @override
-  String get exp2Description =>
-      'Integrated biometric authentication SDK into a Flutter app using Kotlin method channels. Developed features for a Flutter mobile and web application enabling credit simulations.';
-
-  @override
-  String get exp3Role => 'Flutter Developer Intern';
-
-  @override
-  String get exp3Company => 'Munic Car Data';
-
-  @override
-  String get exp3Period => 'June 2020 – December 2020';
-
-  @override
-  String get exp3Description =>
-      'Developed features for a Telematics Mobile App. Built Flutter packages forming a generic SDK with documentation for Telematics app development.';
-
-  @override
   String get projectsTitle => 'Projects';
 
   @override
@@ -119,19 +74,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skillsTitle => 'Skills';
 
   @override
-  String get skillsGroupFlutter => 'Flutter & Dart';
+  String get skillsGroupFlutter => 'Frameworks & Technologies';
 
   @override
-  String get skillsGroupFirebase => 'Firebase';
+  String get skillsGroupFirebase => 'Tools & Platforms';
 
   @override
-  String get skillsGroupArchitecture => 'Architecture';
+  String get skillsGroupArchitecture => 'Methodologies';
 
   @override
-  String get skillsGroupTools => 'Tools & CI/CD';
+  String get skillsGroupTools => 'CI/CD';
 
   @override
-  String get skillsGroupLanguages => 'Languages';
+  String get skillsGroupLanguages => 'Programming Languages';
 
   @override
   String get contactTitle => 'Get In Touch';
