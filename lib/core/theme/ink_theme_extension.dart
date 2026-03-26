@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Custom design tokens for the "Digital Ink" design system.
-/// Access via: Theme.of(context).extension<InkThemeExtension>()!
+/// Access via: Theme.of(context).extension< InkThemeExtension>()!
 @immutable
 class InkThemeExtension extends ThemeExtension<InkThemeExtension> {
   const InkThemeExtension({
