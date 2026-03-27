@@ -6,24 +6,39 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/utils/responsive_breakpoints.dart';
 import '../../../core/widgets/section_title.dart';
 import '../../../l10n/app_localizations.dart';
+import '../data/project_repository.dart';
 import 'project_card.dart';
 import 'projects_view_model.dart';
 
-/// Projects section — reads from [ProjectsViewModel] provided above.
-class ProjectsSection extends StatefulWidget {
+/// Projects section — owns its own [ProjectsViewModel] and defers the
+/// Firestore subscription until the section becomes visible.
+class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
 
   @override
-  State<ProjectsSection> createState() => _ProjectsSectionState();
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider<ProjectsViewModel>(
+      create: (_) => ProjectsViewModel(repository: ProjectRepository()),
+      child: const _ProjectsSectionBody(),
+    );
+  }
 }
 
-class _ProjectsSectionState extends State<ProjectsSection> {
+class _ProjectsSectionBody extends StatefulWidget {
+  const _ProjectsSectionBody();
+
+  @override
+  State<_ProjectsSectionBody> createState() => _ProjectsSectionState();
+}
+
+class _ProjectsSectionState extends State<_ProjectsSectionBody> {
   bool _visible = false;
   bool _triggered = false;
 
   void _onVisibilityChanged(VisibilityInfo info) {
     if (_triggered || info.visibleFraction < 0.05) return;
     _triggered = true;
+    context.read<ProjectsViewModel>().startListening();
     setState(() => _visible = true);
   }
 
@@ -58,6 +73,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     AppLocalizations l10n,
   ) {
     return switch (vm.status) {
+      ProjectsStatus.idle => const SizedBox.shrink(),
       ProjectsStatus.loading => const Center(
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 64),

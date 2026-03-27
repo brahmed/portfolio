@@ -221,19 +221,21 @@ class _AnimatedName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 4,
       children: [
         Text(
-          'Mohamed Amine',
+          l10n.heroFirstName,
           style: Theme.of(context).textTheme.displayMedium,
         ),
         Stack(
           clipBehavior: Clip.none,
           children: [
             Text(
-              'Brahmi',
+              l10n.heroLastName,
               style: Theme.of(context).textTheme.displayLarge,
             ),
             Positioned(

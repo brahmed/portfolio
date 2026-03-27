@@ -24,6 +24,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get navContact => 'التواصل';
 
   @override
+  String get heroFirstName => 'محمد أمين';
+
+  @override
+  String get heroLastName => 'البراهمي';
+
+  @override
   String get heroTitle => 'مطوّر Flutter';
 
   @override

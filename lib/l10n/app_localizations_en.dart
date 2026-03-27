@@ -24,6 +24,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navContact => 'Contact';
 
   @override
+  String get heroFirstName => 'Mohamed Amine';
+
+  @override
+  String get heroLastName => 'BRAHMI';
+
+  @override
   String get heroTitle => 'Flutter Developer';
 
   @override

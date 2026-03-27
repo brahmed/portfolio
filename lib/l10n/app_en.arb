@@ -7,6 +7,9 @@
   "navSkills": "Skills",
   "navContact": "Contact",
 
+  "heroFirstName": "Mohamed Amine",
+  "heroLastName": "BRAHMI",
+
   "heroTitle": "Flutter Developer",
   "heroSubtitle": "Crafting beautiful, performant mobile & web experiences",
   "heroCta": "View Projects",
