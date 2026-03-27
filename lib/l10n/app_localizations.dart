@@ -133,7 +133,7 @@ abstract class AppLocalizations {
   /// No description provided for @heroTitle.
   ///
   /// In en, this message translates to:
-  /// **'Senior Flutter Developer'**
+  /// **'Flutter Developer'**
   String get heroTitle;
 
   /// No description provided for @heroSubtitle.

@@ -24,7 +24,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get navContact => 'Contact';
 
   @override
-  String get heroTitle => 'Développeur Flutter Senior';
+  String get heroTitle => 'Développeur Flutter';
 
   @override
   String get heroSubtitle =>
