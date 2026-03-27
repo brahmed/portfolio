@@ -8,8 +8,6 @@ import 'core/theme/app_theme.dart';
 import 'core/theme/theme_controller.dart';
 import 'features/contact/data/contact_repository.dart';
 import 'features/contact/presentation/contact_view_model.dart';
-import 'features/projects/data/project_repository.dart';
-import 'features/projects/presentation/projects_view_model.dart';
 
 /// Root application widget.
 ///
@@ -28,11 +26,6 @@ class App extends StatelessWidget {
         ),
         ChangeNotifierProvider<LocaleController>(
           create: (_) => LocaleController(),
-        ),
-        ChangeNotifierProvider<ProjectsViewModel>(
-          create: (_) => ProjectsViewModel(
-            repository: ProjectRepository(),
-          ),
         ),
         ChangeNotifierProvider<ContactViewModel>(
           create: (_) => ContactViewModel(

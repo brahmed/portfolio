@@ -7,6 +7,9 @@
   "navSkills": "المهارات",
   "navContact": "التواصل",
 
+  "heroFirstName": "محمد أمين",
+  "heroLastName": "البراهمي",
+
   "heroTitle": "مطوّر Flutter",
   "heroSubtitle": "تصميم تجارب موبايل وويب جميلة وعالية الأداء",
   "heroCta": "عرض المشاريع",

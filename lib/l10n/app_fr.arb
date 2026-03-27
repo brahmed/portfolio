@@ -7,6 +7,9 @@
   "navSkills": "Compétences",
   "navContact": "Contact",
 
+  "heroFirstName": "Mohamed Amine",
+  "heroLastName": "BRAHMI",
+
   "heroTitle": "Développeur Flutter",
   "heroSubtitle": "Conception d'expériences mobiles et web belles et performantes",
   "heroCta": "Voir les projets",

@@ -130,6 +130,18 @@ abstract class AppLocalizations {
   /// **'Contact'**
   String get navContact;
 
+  /// No description provided for @heroFirstName.
+  ///
+  /// In en, this message translates to:
+  /// **'Mohamed Amine'**
+  String get heroFirstName;
+
+  /// No description provided for @heroLastName.
+  ///
+  /// In en, this message translates to:
+  /// **'BRAHMI'**
+  String get heroLastName;
+
   /// No description provided for @heroTitle.
   ///
   /// In en, this message translates to:
