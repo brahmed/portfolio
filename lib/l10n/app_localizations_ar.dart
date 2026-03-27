@@ -24,7 +24,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get navContact => 'التواصل';
 
   @override
-  String get heroTitle => 'مطوّر Flutter أول';
+  String get heroTitle => 'مطوّر Flutter';
 
   @override
   String get heroSubtitle => 'تصميم تجارب موبايل وويب جميلة وعالية الأداء';
